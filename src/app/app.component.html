@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Book DataBase</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a routerLink="/books" class="nav-link active" aria-current="page">Books</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/addBook" class="nav-link" >Add</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/deleteBookById" class="nav-link" >Remove</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/findBookById" class="nav-link" >Find</a>
+          </li>
+        </ul>
+        <form class="d-flex ms-auto" role="search">
+          <input class="form-control me-3" type="search" placeholder="Search a book" aria-label="Search">
+          <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+
+

@@ -1,0 +1,30 @@
+<div class="card mb-5 text-bg-dark position-absolute top-50 start-50 translate-middle" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4" style="padding: 10px">
+      <img *ngIf="imageSrc != null" [src]="imageSrc" class="img-fluid img-thumbnail" style="margin-left: 0; margin-top: 50%;">
+      <i *ngIf="imageSrc == null" class="fa-solid fa-book fa-2xl" style="margin-left: 50%; margin-top: 125%"></i>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title text-white-100"></h5>
+        <form (ngSubmit)="onSubmit()" #addBookForm="ngForm">
+          <div class="mb-3">
+            <label for="bookName" class="form-label">Tile</label>
+            <input type="text" class="form-control" id="bookName" name="bookName" [(ngModel)]="book.name" #bookName="ngModel" required>
+          </div>
+          <div [hidden]="!bookName.pristine" class="invalid-feedback">Title Required</div>
+          <div class="mb-3">
+            <label for="bookAuthor" class="form-label">Author</label>
+            <input type="text" class="form-control" id="bookAuthor" name="bookAuthor" [(ngModel)]="book.author" #bookAuthor="ngModel" required>
+          </div>
+          <div class="mb-3">
+            <label for="bookThumbnail" class="form-label">Book Cover</label>
+            <input type="file" class="form-control" id="bookThumbnail" name="bookThumbnail" (change)="onFileChange($event)">
+          </div>
+          <div [hidden]="!bookAuthor.pristine" class="invalid-feedback">Author Required</div>
+          <button type="submit" class="btn btn-outline-light" [disabled]="!addBookForm.form.valid">Add Book</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

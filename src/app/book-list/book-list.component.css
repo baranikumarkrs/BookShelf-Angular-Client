@@ -1,0 +1,23 @@
+.card-body{
+  text-align: center;
+  align-content: center;
+}
+
+.card{
+  background-color: white;
+  filter: drop-shadow(2px 2px 10px black);
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.card:hover{
+  animation: bounce 2.5s forwards;
+}
