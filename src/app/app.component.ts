@@ -8,7 +8,7 @@ import { BookServiceService as BookService } from './service/book-service.servic
 
 export class AppComponent {
 
-title = "Barani's first angular app";
+title = "BookShelf";
 
 constructor(private bookService : BookService){}
 
